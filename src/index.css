@@ -4,9 +4,11 @@
     box-sizing: border-box;
 }
 
-a {
+a,
+button {
     all: unset
 }
+
 
 img {
     width: 100%;
@@ -30,6 +32,21 @@ header {
     padding: 30px 0;
 }
 
+.subtitle {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.label-search {
+    display: none;
+}
+
+.form-control {
+    margin-right: 10px;
+    padding: 10px;
+}
+
 .container-movies {
     display: flex;
     flex-wrap: wrap;
@@ -37,7 +54,7 @@ header {
 }
 
 .card-movie {
-    width: calc((100% - 150px) / 3);
+    width: calc((100% - 100px) / 3);
     margin-bottom: 60px;
 }
 

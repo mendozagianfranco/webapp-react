@@ -19,7 +19,14 @@ export default function Home() {
     return (
         <div className='container'>
             <h1>Movies</h1>
-            <h2>Best movies in the class142</h2>
+            <div className='subtitle'>
+                <h2>Best movies in the class142</h2>
+                <form >
+                    <label className='label-search'>Cerca</label>
+                    <input className='form-control' type="text" placeholder='Cerca' />
+                    <button type='submit' className='btn-info'>Cerca</button>
+                </form>
+            </div>
             <div className='container-movies'>
                 {movies.length ? movies.map(movie => (<MovieCard key={movie.id} data={movie} />)) : <div>Nessun Film Trovato</div>}
             </div>
