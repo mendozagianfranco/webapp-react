@@ -20,7 +20,7 @@ export default function Home() {
         <>
             <h1>Movies</h1>
             <h2>Best movies in the class142</h2>
-            {movies.length ? movies.map(movie => (<MovieCard key={movie.id} image={movie.imagePath} title={movie.title} />)) : <div>Nessun Film Trovato</div>}
+            {movies.length ? movies.map(movie => (<MovieCard key={movie.id} data={movie} />)) : <div>Nessun Film Trovato</div>}
         </>
     );
 }
