@@ -17,10 +17,12 @@ export default function Home() {
     useEffect(fetchMovies, []);
 
     return (
-        <>
+        <div className='container'>
             <h1>Movies</h1>
             <h2>Best movies in the class142</h2>
-            {movies.length ? movies.map(movie => (<MovieCard key={movie.id} data={movie} />)) : <div>Nessun Film Trovato</div>}
-        </>
+            <div className='container-movies'>
+                {movies.length ? movies.map(movie => (<MovieCard key={movie.id} data={movie} />)) : <div>Nessun Film Trovato</div>}
+            </div>
+        </div>
     );
 }
