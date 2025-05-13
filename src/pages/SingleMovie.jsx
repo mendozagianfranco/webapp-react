@@ -29,7 +29,10 @@ export default function SingleMovie() {
 
             </div>
             <div className=' container container-reviews'>
-                <h2>OUR comunity reviews</h2>
+                <div className='container-reviews-top'>
+                    <h2>OUR comunity reviews</h2>
+                    <div>Average: {movie.voto_medio}</div>
+                </div>
                 {movie.reviews?.length ? movie.reviews.map(review => (
                     <ReviewCard key={review.id} data={review} />
                 )) : <div>Nessuna Recensione</div>}

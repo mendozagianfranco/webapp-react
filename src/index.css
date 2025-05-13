@@ -87,6 +87,12 @@ header {
     margin-top: 20px;
 }
 
+.container-reviews-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .review-card {
     padding: 20px 5px;
     border: 1px solid #808080;
