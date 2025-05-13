@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import ReviewCard from '../components/ReviewCard';
+import StarRating from '../components/StarRating';
 
 export default function SingleMovie() {
     const { id } = useParams();
@@ -31,7 +32,7 @@ export default function SingleMovie() {
             <div className=' container container-reviews'>
                 <div className='container-reviews-top'>
                     <h2>OUR comunity reviews</h2>
-                    <div>Average: {movie.voto_medio}</div>
+                    <div>Average: <StarRating vote={movie.voto_medio} /> </div>
                 </div>
                 {movie.reviews?.length ? movie.reviews.map(review => (
                     <ReviewCard key={review.id} data={review} />

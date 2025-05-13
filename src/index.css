@@ -107,3 +107,7 @@ header {
 .review-card-author {
     color: #808080;
 }
+
+.star-rating {
+    color: #fdc602;
+}
