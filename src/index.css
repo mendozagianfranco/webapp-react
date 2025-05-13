@@ -66,6 +66,19 @@ header {
     cursor: pointer;
 }
 
+.container-movie-detail {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
 .container-movie-detail img {
     width: 500px;
+}
+
+.container-movie-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: start;
 }

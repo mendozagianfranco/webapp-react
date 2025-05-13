@@ -17,17 +17,23 @@ export default function SingleMovie() {
     useEffect(getMovie, []);
 
     return (
-        <div className='container container-movie-detail'>
-            <h1>{movie.title}</h1>
-            <img src={movie.image} alt="" />
-            <p>{movie.abstract}</p>
-            <div className='container-reviews'>
+        <>
+            <div className='container container-movie-detail'>
+                <img src={movie.image} alt="" />
+                <div className='container-movie-info'>
+                    <h1>{movie.title}</h1>
+                    <p>Director: <strong>{movie.director}</strong></p>
+                    <p>{movie.abstract}</p>
+                </div>
+
+            </div>
+            <div className=' container container-reviews'>
                 {movie.reviews?.length ? movie.reviews.map(review => (
                     <div key={review.id}>
                         {review.name}
                     </div>
                 )) : <div>Nessuna Recensione</div>}
             </div>
-        </div>
+        </>
     );
 }
