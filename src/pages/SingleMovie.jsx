@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import ReviewCard from '../components/ReviewCard';
 
 export default function SingleMovie() {
     const { id } = useParams();
@@ -28,10 +29,9 @@ export default function SingleMovie() {
 
             </div>
             <div className=' container container-reviews'>
+                <h2>OUR comunity reviews</h2>
                 {movie.reviews?.length ? movie.reviews.map(review => (
-                    <div key={review.id}>
-                        {review.name}
-                    </div>
+                    <ReviewCard key={review.id} data={review} />
                 )) : <div>Nessuna Recensione</div>}
             </div>
         </>
