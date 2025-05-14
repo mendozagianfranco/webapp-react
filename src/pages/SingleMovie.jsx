@@ -17,7 +17,7 @@ export default function SingleMovie() {
             });
     }
 
-    useEffect(getMovie, []);
+    useEffect(getMovie, [movie]);
 
     return (
         <>
@@ -39,7 +39,7 @@ export default function SingleMovie() {
                     <ReviewCard key={review.id} data={review} />
                 )) : <div>Nessuna Recensione</div>}
             </div>
-            <FormReview />
+            <FormReview movie_id={id} />
         </>
     );
 }
