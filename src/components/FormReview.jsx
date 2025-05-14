@@ -21,11 +21,16 @@ export default function FormReview({ movie_id }) {
     }
 
     function handleFormData(e) {
+        const { name, value } = e.target;
+        let currentValue = value;
+        if (name === 'vote') {
+            currentValue = parseInt(value);
+        }
+
         setFormData(formData => ({
             ...formData,
-            [e.target.name]: e.target.value
+            [name]: currentValue
         }));
-        console.log(formData);
 
     }
 
