@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import ReviewCard from '../components/ReviewCard';
 import StarRating from '../components/StarRating';
+import FormReview from '../components/FormReview';
 
 export default function SingleMovie() {
     const { id } = useParams();
@@ -38,6 +39,7 @@ export default function SingleMovie() {
                     <ReviewCard key={review.id} data={review} />
                 )) : <div>Nessuna Recensione</div>}
             </div>
+            <FormReview />
         </>
     );
 }
