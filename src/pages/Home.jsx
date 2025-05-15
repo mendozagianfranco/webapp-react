@@ -1,18 +1,25 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import MovieCard from '../components/MovieCard';
+import { useContext } from 'react';
+import GlobalContext from '../contexts/GlobalContext';
 
 export default function Home() {
     const [movies, setMovies] = useState([]);
     const [search, setSearch] = useState('');
 
+    const { setIsLoading } = useContext(GlobalContext);
+
     const endpoint = 'http://127.0.01:3000/api/movies';
     function fetchMovies() {
+        setIsLoading(true);
+
         axios.get(endpoint, { params: { search } })
             .then(res => {
                 setMovies(res.data);
             })
-            .catch(err => console.log(err));
+            .catch(err => console.log(err))
+            .finally(() => { setIsLoading(false); });
     }
 
     function searchMovies(e) {

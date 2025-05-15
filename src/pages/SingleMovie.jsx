@@ -4,17 +4,23 @@ import { useParams } from 'react-router-dom';
 import ReviewCard from '../components/ReviewCard';
 import StarRating from '../components/StarRating';
 import FormReview from '../components/FormReview';
+import { useContext } from 'react';
+import GlobalContext from '../contexts/GlobalContext';
 
 export default function SingleMovie() {
     const { id } = useParams();
     const [movie, setMovie] = useState({});
+
+    const { setIsLoading } = useContext(GlobalContext);
+
     const endpoint = `http://127.0.01:3000/api/movies/${id}`;
 
     function getMovie() {
+        setIsLoading(true);
         axios.get(endpoint)
             .then(res => {
                 setMovie(res.data);
-            });
+            }).finally(() => setIsLoading(false));
     }
 
     useEffect(getMovie, []);
