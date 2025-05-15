@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react';
 
-export default function FormReview({ movie_id }) {
+export default function FormReview({ movie_id, refreshBook }) {
 
     const initialForm = {
         name: "",
@@ -17,6 +17,7 @@ export default function FormReview({ movie_id }) {
         axios.post(endpoint, formData)
             .then(res => {
                 setFormData(initialForm);
+                refreshBook();
             });
     }
 
